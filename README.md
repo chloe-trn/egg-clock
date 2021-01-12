@@ -1,4 +1,4 @@
-### Digital Clock
+<h1>Digital Clock</h1>
 <h2><a  href="https://chloe-trn.github.io/egg-cellent-clock/">Live Demo</a></h2>
 <p> An eggspecially cool clock :)</p>
 
