@@ -1,17 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 *{
     padding: 0; 
     margin: 0; 
     box-sizing: border-box;
 }
 body{
-    background: lightblue;
+    background: rgb(9, 47, 80);
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
 }
 .egg-white{
     position: relative;
-    margin: 100px auto;
-    max-width: 550px; 
+    margin: 50px auto 30px auto;
+    max-width: 500px; 
     width: 100%;
-    height: 550px; 
+    height: 500px; 
     background: white;
     border-radius: 75% 96% 55% 80% / 69% 88% 81% 71% ;
 }
@@ -22,9 +29,9 @@ body{
     transform: translate(-50%,-50%);
     background:#ffce0a; 
     border-radius: 45% 55% 48% 52% / 63% 50% 50% 37% ;
-    max-width: 250px; 
+    max-width: 200px; 
     width: 100%;
-    height: 250px; 
+    height: 200px; 
 
 }
 .clock-hand{
@@ -38,19 +45,19 @@ body{
 .hour-hand{
     background: rgb(63, 61, 61);
     width: 8px; 
-    height: 120px; 
+    height: 50px; 
     z-index: 1; 
 }
 .minute-hand{
     background: rgb(63, 61, 61);
     width: 5px; 
-    height: 160px;
+    height: 90px;
     z-index: 2; 
 }
 .second-hand{
     width: 3px; 
-    height: 160px; 
-    background: red;
+    height: 80px; 
+    background: rgb(252, 59, 59);
     z-index: 3;
 }
 .center{

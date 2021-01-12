@@ -2,33 +2,45 @@ const interval = 1000; // 1000 ms
 const hourHand = document.querySelector('.hour-hand');
 const minuteHand = document.querySelector('.minute-hand');
 const secondHand = document.querySelector('.second-hand');
+const time = document.querySelector('.time');
+const currentDate = document.querySelector('.current-date');
+let amPM; 
+const days = ['Sun','Mon','Tue','Wed',
+              'Thu','Fri','Sat'];
+const months = ['Jan','Feb','March','April','May','June',
+                'July','Aug','Sept','Oct','Nov','Dec'];
 
-clock();
 function rotate(clockHand, degree){
-    if (degree >= 180){
-        clockHand.style.transform = `rotate(${degree}deg) translateX(50%)`;
-    }else{
-        clockHand.style.transform = `rotate(${degree}deg) translateX(50%)`;
-    }
+    clockHand.style.transform = `rotate(${degree}deg) translateX(50%)`;
 }
+
 function clock(){
     let date = new Date(); 
-    //console.log("date: "+date);
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getFullYear();
     let hour = (date.getHours() + 24) % 12 || 12;;
-    //console.log("hour: "+ hour);
     let minute = date.getMinutes();
-    //console.log("min: " + minute);
     let second = date.getSeconds();
-    //console.log("sec: "+ second);
     let hourHandDeg = (hour * 360) / 12;       // 12 hours on clock 
-    //console.log(hourHandDeg);
     let minuteHandDeg = (minute * 360 ) / 60;  // 60 minutes per hour 
-    //console.log(minuteHandDeg);
     let secondHandDeg =  (second * 360) / 60;  // 60 seconds per minute 
-    //console.log(secondHandDeg);
+
     rotate(hourHand,hourHandDeg);
     rotate(minuteHand,minuteHandDeg);
     rotate(secondHand,secondHandDeg);
-}
 
+    if (date.getHours() >= 12){
+        amPm = 'pm';
+    }else{
+        amPm = 'am';
+    }
+    if(minute < 10){
+        minute = '0' + minute; 
+    }
+
+    time.innerHTML = `${hour}:${minute}${amPm}`;
+    currentDate.innerHTML = `${days[day]},${months[month]} ${year}`;
+}
+clock();
 setInterval(clock,interval);
