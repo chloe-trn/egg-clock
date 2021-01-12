@@ -3,7 +3,6 @@ const hourHand = document.querySelector('.hour-hand');
 const minuteHand = document.querySelector('.minute-hand');
 const secondHand = document.querySelector('.second-hand');
 const time = document.querySelector('.time');
-const currentDate = document.querySelector('.current-date');
 let amPM; 
 const days = ['Sun','Mon','Tue','Wed',
               'Thu','Fri','Sat'];
@@ -39,8 +38,7 @@ function clock(){
         minute = '0' + minute; 
     }
 
-    time.innerHTML = `${hour}:${minute}${amPm}`;
-    currentDate.innerHTML = `${days[day]},${months[month]} ${year}`;
+    time.innerHTML = `${hour}:${minute}${amPm} - ${days[day]},${months[month]} ${year}`;
 }
 clock();
 setInterval(clock,interval);
